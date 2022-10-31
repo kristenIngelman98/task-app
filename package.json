@@ -1,0 +1,25 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristenIngelman98/task-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristenIngelman98/task-app/issues"
+  },
+  "homepage": "https://github.com/kristenIngelman98/task-app#readme",
+  "dependencies": {
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.0",
+    "validator": "^13.7.0"
+  }
+}
