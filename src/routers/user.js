@@ -14,6 +14,15 @@ router.post('/users', async (req, res) => {
         res.status(400).send(e)
     }
 })
+router.post('/users/login', async (req, res) => {
+    try {
+        const user = await User.findByCredentials()
+
+    }
+    catch (e) {
+
+    }
+})
 
 // read all users
 router.get('/users', async (req, res) => {
@@ -54,7 +63,13 @@ router.patch('/users/:id', async (req, res) => {
         return res.status(400).send({ error: 'Invalid updates!' })
     }
     try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+        const user = await User.findById(req.params.id)
+
+        user.name = 'Something else'
+
+        updates.forEach((update) => user[update] = req.body[update])
+        
+        await user.save()
 
         if (!user) {
             return res.status(404).send()
