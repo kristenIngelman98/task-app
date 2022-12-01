@@ -20,9 +20,9 @@ const port = process.env.PORT || 3000;
 //     }
 // })
 
-app.use((req, res, next) => {
-    res.status(503).send('Website currently under construction..')
-})
+// app.use((req, res, next) => {
+//     res.status(503).send('Website currently under construction..')
+// })
 
 // configure express to automatically parse incoming JSON to an Obj
 app.use(express.json())

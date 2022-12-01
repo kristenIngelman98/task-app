@@ -1,7 +1,9 @@
 const express = require('express')
+
+const User = require('../models/user')
+const auth = require('../middleware/auth')
 // defining new router
 const router = new express.Router()
-const User = require('../models/user')
 
 // creating user
 router.post('/users', async (req, res) => {
@@ -27,7 +29,7 @@ router.post('/users/login', async (req, res) => {
 })
 
 // read all users
-router.get('/users', async (req, res) => {
+router.get('/users', auth, async (req, res) => {
     try {
         // mongoose gets all users from the db
         const users = await User.find({})
